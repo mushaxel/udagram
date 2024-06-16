@@ -14,14 +14,14 @@ before_script:
   - echo "no tests"
 
 script:
-  - docker-compose --version # print the version for logging
-  - docker-compose -f docker-compose-build.yaml build --parallel
-  #- docker-compose build
+  - docker-compose -f docker-compose-build.yaml build
+
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push mushaxel/udagram-api-feed:v1
-  - docker push mushaxel/udagram-api-users:v1
-  - docker push mushaxel/udagram-frontend:v1
-  - docker push mushaxel/reverseproxy:v1
+  - docker push mushaxel/udagram-api-feed:latest
+  - docker push mushaxel/udagram-api-users:latest
+  - docker push mushaxel/udagram-frontend:local
+  - docker push mushaxel/reverseproxy:latest
+
