@@ -7,7 +7,12 @@ export const sequelize = new Sequelize({
   'password': config.password,
   'database': config.database,
   'host': config.host,
-
-  'dialect': config.dialect,
   'storage': ':memory:',
+  'dialect': config.dialect,
+  dialectOptions: {
+    ssl: {
+      require: true, // This will help you. But you will see nwe error
+      rejectUnauthorized: false // This line will fix new error
+    }
+  },
 });
