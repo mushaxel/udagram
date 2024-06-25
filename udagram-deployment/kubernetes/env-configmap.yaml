@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: monolith-user3020806
+ # AWS_PROFILE: michelle-udagram-ex-629896961394
+  AWS_PROFILE: default
+  AWS_REGION: us-east-1
+  JWT_SECRET: testing
+  POSTGRES_DB: monolith
+  POSTGRES_HOST: monolith.cvgqpqlr29kf.us-east-1.rds.amazonaws.com
+  URL: http://a709a6999d1d546b7917d28e2b798648-347250204.us-east-1.elb.amazonaws.com/
+metadata:
+  name: env-config
